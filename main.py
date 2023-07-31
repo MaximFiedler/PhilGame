@@ -29,12 +29,14 @@ slowUpdate = 0
 
 score = 0
 
-legirio_pos_y = 100
+legirio_pos_y = 400
 legirio_pos_x = 1100
 
 gameover = False
 
-gameover_text = font_big.render("Game over! (Press space to continue)", False, "White")
+phil_x_pos = 100
+
+gameover_text = font_big.render("Game over!", False, "White")
 
 while True:
     for event in pygame.event.get():
@@ -54,7 +56,7 @@ while True:
 
         # ON SPACE RESPAWN
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_SPACE] or keys[pygame.K_r] and phil_y_pos >= 260:
+        if keys[pygame.K_r]:
             gameover = False
             score = 0
             iq = 10
@@ -66,16 +68,18 @@ while True:
 
     # ON JUMP
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_SPACE] and phil_y_pos >= 260:
+    if keys[pygame.K_SPACE] and phil_y_pos >= 260 and not keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]:
         jumping = True
     if jumping:
-        if phil_y_pos > 30:
-            phil_y_pos -= 15
+        if phil_y_pos > -260:
+            if phil_x_pos < 970: phil_x_pos += 10
+            phil_y_pos -= 20
         else:
             jumping = False
     else:
+        if phil_x_pos > 100 and not phil_y_pos < 260: phil_x_pos -= 7
         if phil_y_pos < 260:
-            phil_y_pos += 6
+            phil_y_pos += 10
 
     # MOVE GROUND
     ground_x_pos -= 8
@@ -86,10 +90,10 @@ while True:
     # MOVE LEGIRIO
     legirio_pos_x -= 5
     if legirio_pos_x < 0 - random.uniform(50, 3000):
-        legirio_pos_x = 1200
-        legirio_pos_y += random.uniform(-100, 200)
-        if legirio_pos_y > 400: legirio_pos_y = 100
-        if legirio_pos_y < 20: legirio_pos_y = 100
+        legirio_pos_x = 2000
+        legirio_pos_y += random.uniform(-100, 100)
+        if legirio_pos_y > 700: legirio_pos_y = 500
+        if legirio_pos_y < 300: legirio_pos_y = 500
 
     screen.blit(surface_sky, (0, 0))
     screen.blit(surface_ground, (ground_x_pos, 400))
@@ -107,12 +111,16 @@ while True:
 
     surface_text = font.render("Score: " + str(score), False, "White")
     surface_iq = font_iq.render("IQ: " + str(iq), False, "Gray")
-
+    fly_pos = 0
     # Phil
-    surface_phil = pygame.image.load("resources/elements/animations/phil/frame_0" + str(phil_anim_state) + ".gif")
-    screen.blit(surface_phil, (100, phil_y_pos))
+    if keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]:
+        surface_phil = pygame.image.load("resources/elements/animations/phil/fly.png")
+        fly_pos = 200
+    else:
+        surface_phil = pygame.image.load("resources/elements/animations/phil/frame_0" + str(phil_anim_state) + ".gif")
+    screen.blit(surface_phil, (phil_x_pos, phil_y_pos + fly_pos))
     screen.blit(surface_text, (20, 20))
-    screen.blit(surface_iq, (160, phil_y_pos - 50))
+    screen.blit(surface_iq, (phil_x_pos + 60, phil_y_pos - 50 + fly_pos))
     surface_legirio = pygame.image.load("resources/elements/legirio.png")
     screen.blit(surface_legirio, (legirio_pos_x, legirio_pos_y))
 
@@ -121,9 +129,13 @@ while True:
     legirio_rect.topleft = (legirio_pos_x, legirio_pos_y)
 
     phil_rect = surface_phil.get_rect()
-    phil_rect.topleft = (100, phil_y_pos)
+    phil_rect.topleft = (phil_x_pos, phil_y_pos)
+    # Phil
     if legirio_rect.colliderect(phil_rect):
-        legirio_pos_x = 1200
+        legirio_pos_x = 2000
+        legirio_pos_y += random.uniform(-100, 100)
+        if legirio_pos_y > 500: legirio_pos_y = 400
+        if legirio_pos_y < 200: legirio_pos_y = 400
         iq -= 1
 
     pygame.display.update()
