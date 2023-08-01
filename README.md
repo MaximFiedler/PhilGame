@@ -11,6 +11,4 @@
     - Python: 3.9
     - Pygame: pygame-2.5.0
 
-
-
-![image](https://github.com/MaximFiedler/PhilGame/assets/114857048/4d9f74f0-8a42-436d-9baa-27a3e6f484e9)
+![philgame](https://github.com/MaximFiedler/PhilGame/assets/114857048/f953fe89-34d0-4fca-b03c-df663ca1ae54)
