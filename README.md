@@ -1,8 +1,8 @@
 <h1 align="center">PhilGame - A pygame</h1>
 <h3 align="center">Do not look into the source code it looks quite bad...</h3>
-<p align="center">
-  ![philgame](https://github.com/MaximFiedler/PhilGame/assets/114857048/caba1da6-e763-47c7-9c0d-59bf70a64b77)
-</p>
+<div align="center">
+  <image src="https://github.com/MaximFiedler/PhilGame/assets/114857048/caba1da6-e763-47c7-9c0d-59bf70a64b77">
+</div>
 
 ## Installation
 - `pip install pygame`
