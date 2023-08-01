@@ -20,4 +20,3 @@ TODO
 - Clean code
 - Seperate hitboxes from images
 - Pause screen
-
