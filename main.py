@@ -1,5 +1,6 @@
 import pygame
 from sys import exit
+import random
 
 pygame.init()
 screen = pygame.display.set_mode((1000, 600))
@@ -20,7 +21,6 @@ ground_x_pos = 1000
 phil_y_pos = 260
 jumping = False
 
-import random
 
 iq = 10
 
