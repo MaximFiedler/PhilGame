@@ -21,5 +21,3 @@ TODO
 - Seperate hitboxes from images
 - Pause screen
 
-![ezgif-3-5e1e666300 (1)](https://github.com/MaximFiedler/PhilGame/assets/114857048/73b2b411-cb9a-464e-b665-a139ef790925)
-
