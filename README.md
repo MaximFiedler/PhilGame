@@ -15,3 +15,7 @@
    
 Or download the zip with the executable from the [releases](https://github.com/MaximFiedler/PhilGame/releases/)
 > Extract the zip file and open the main.exe file. Important! The resources folder must be in the same folder as the main.exe.
+
+TODO
+- Clean code
+- Seperate hitboxes from images
