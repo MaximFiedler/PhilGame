@@ -6,6 +6,7 @@
 - `pip install pygame`
 - Run main.py
 - If it does not work check what versions of python, pip and pygame you have installed
-  - PIP: pip-23.2.1
-  - Python: 3.9
-  - Pygame: pygame-2.5.0
+  - Versions I use 
+    - PIP: pip-23.2.1
+    - Python: 3.9
+    - Pygame: pygame-2.5.0
