@@ -1,6 +1,8 @@
 <h1 align="center">PhilGame - A pygame</h1>
 <h3 align="center">Do not look into the source code it looks quite bad...</h3>
-
+<p align="center">
+  ![philgame](https://github.com/MaximFiedler/PhilGame/assets/114857048/caba1da6-e763-47c7-9c0d-59bf70a64b77)
+</p>
 
 ## Installation
 - `pip install pygame`
@@ -13,5 +15,3 @@
    
 Or download the zip with the executable from the [releases](https://github.com/MaximFiedler/PhilGame/releases/)
 > Extract the zip file and open the main.exe file. Important! The resources folder must be in the same folder as the main.exe.
-
-![philgame](https://github.com/MaximFiedler/PhilGame/assets/114857048/caba1da6-e763-47c7-9c0d-59bf70a64b77)
