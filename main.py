@@ -16,11 +16,14 @@ surface_sky = pygame.image.load("resources/elements/sky.png")
 surface_damage = pygame.image.load("resources/elements/damage.png")
 surface_gameover = pygame.image.load("resources/elements/gameover.png")
 surface_ground = pygame.image.load("resources/elements/ground.png")
+surface_clouds = pygame.image.load("resources/elements/clouds.png")
+surface_clouds_bg = pygame.image.load("resources/elements/clouds_bg.png")
 surface_phil = pygame.image.load("resources/elements/animations/phil/frame_00.gif")
 ground_x_pos = 1000
-phil_y_pos = 260
+cloud_x_pos = 1000
+cloud_bg_x_pos = 1000
+phil_y_pos = 200
 jumping = False
-
 
 iq = 10
 
@@ -81,7 +84,7 @@ while True:
     if keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]: speed_mult += 0.0005
 
     # ON JUMP
-    if keys[pygame.K_SPACE] and phil_y_pos >= 260 and not keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]:
+    if keys[pygame.K_SPACE] and phil_y_pos >= 200 and not keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]:
         jumping = True
     if jumping:
         if phil_y_pos > -300:
@@ -90,14 +93,24 @@ while True:
         else:
             jumping = False
     else:
-        if phil_x_pos > 100 and not phil_y_pos < 260: phil_x_pos -= 7
-        if phil_y_pos < 260:
+        if phil_x_pos > 100 and not phil_y_pos < 200: phil_x_pos -= 6 * speed_mult
+        if phil_y_pos < 200:
             phil_y_pos += 10
 
     # MOVE GROUND
     ground_x_pos -= 4.5 * speed_mult
     if ground_x_pos < 0:
         ground_x_pos = 1000
+
+    # MOVE CLOUDS
+    cloud_x_pos -= 0.5 * speed_mult
+    if cloud_x_pos < 0:
+        cloud_x_pos = 1000
+
+    # MOVE CLOUDS BG
+    cloud_bg_x_pos -= 0.3 * speed_mult
+    if cloud_bg_x_pos < 0:
+        cloud_bg_x_pos = 1000
 
     # MOVE LEGIRIO
     legirio_pos_x -= 3.5 * speed_mult
@@ -108,8 +121,11 @@ while True:
         if legirio_pos_y < 300: legirio_pos_y = 500
 
     screen.blit(surface_sky, (0, 0))
-    screen.blit(surface_ground, (ground_x_pos, 400))
-    screen.blit(surface_ground, (ground_x_pos - 1000, 400))
+    screen.blit(surface_ground, (ground_x_pos, 450))
+    screen.blit(surface_ground, (ground_x_pos - 1000, 450))
+
+    screen.blit(surface_clouds_bg, (cloud_bg_x_pos, 110))
+    screen.blit(surface_clouds_bg, (cloud_bg_x_pos - 1000, 110))
 
     slowUpdateInterval = max(base_slowUpdateInterval / speed_mult, 1)
 
