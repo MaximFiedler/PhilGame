@@ -19,3 +19,4 @@ Or download the zip with the executable from the [releases](https://github.com/M
 TODO
 - Clean code
 - Seperate hitboxes from images
+- Pause screen
