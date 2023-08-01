@@ -10,3 +10,7 @@
     - PIP: pip-23.2.1
     - Python: 3.9
     - Pygame: pygame-2.5.0
+
+
+
+![image](https://github.com/MaximFiedler/PhilGame/assets/114857048/4d9f74f0-8a42-436d-9baa-27a3e6f484e9)
