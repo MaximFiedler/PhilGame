@@ -14,4 +14,4 @@
 Or download the zip with the executable from the [releases](https://github.com/MaximFiedler/PhilGame/releases/)
 > Extract the zip file and open the main.exe file. Important! The resources folder must be in the same folder as the main.exe.
 
-![philgame](https://github.com/MaximFiedler/PhilGame/assets/114857048/f953fe89-34d0-4fca-b03c-df663ca1ae54)
+![philgame](https://github.com/MaximFiedler/PhilGame/assets/114857048/caba1da6-e763-47c7-9c0d-59bf70a64b77)
