@@ -1,7 +1,7 @@
 <h1 align="center">PhilGame - A pygame</h1>
 <h3 align="center">Do not look into the source code it looks quite bad...</h3>
 <div align="center">
-  <image src="https://github.com/MaximFiedler/PhilGame/assets/114857048/caba1da6-e763-47c7-9c0d-59bf70a64b77">
+  <image src="https://github.com/MaximFiedler/PhilGame/assets/114857048/e8aed3c1-09e2-4fb0-8035-82c6a3afc0eb">
 </div>
 
 ## Installation
