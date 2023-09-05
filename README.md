@@ -17,8 +17,8 @@ Or download the zip with the executable from the [releases](https://github.com/M
 > Extract the zip file and open the main.exe file. Important! The resources folder must be in the same folder as the main.exe.
 
 ## How to play?
-Use <kbd>SPACE</kbd> to jump and <kbd>LSHIFT</kbd> to glide
-If you collide with a logo you loose one IQ
+Use <kbd>SPACE</kbd> to jump and <kbd>LSHIFT</kbd> to glide<br>
+If you collide with a logo you loose one IQ<br>
 You will die if you have no IQ left
 
 TODO
